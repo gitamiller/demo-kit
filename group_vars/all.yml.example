@@ -182,3 +182,43 @@ ucp_url: https://ucp1.{{ aws_route53_domain }}
 
 # Default is `latest`
 #ucp_version: 3.0.0
+
+# (Optional) Set up users and roles
+ucp_rbac_orgs:
+  - org: dev
+    teams:
+      - team: dot-net
+        users:
+          - <YOUR_NAME>
+          - betty
+      - team: java
+        users:
+          - charlie
+          - david
+  - org: docker-datacenter
+    teams:
+      - team: dot-net
+        users:
+          - <YOUR_NAME>
+          - betty
+      - team: java
+        users:
+          - charlie
+          - david
+  - org: qa
+    teams:
+      - jenkins
+      - qa
+  - foo
+  - bar
+  
+ucp_rbac_users:
+  - <YOUR_NAME>
+  - betty
+  - charlie
+  - david
+  - fullName: Test User
+    isAdmin: true
+    name: test
+    password: specialpass
+    searchLDAP: false
